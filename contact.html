@@ -17,7 +17,7 @@
       </ul>
     </nav>
     <main>
-      <section>
+      <address>
         <p>
           <em>
             Guldbergsgade 29N 2200 Copenhagen
@@ -34,41 +34,37 @@
           </em>
         </p>
         <img src="restaurant_assets/img/map.jpg" alt="">
-      </section>
-      <section>
-        <form action="#">
-          <fieldset>
-            <legend>Contact form</legend>
-            <div>
-              <label for="name">Full name </label>
-              <input type="text" id="name" />
-            </div>
-            <div>
-              <label for="phone">Phone no. </label>
-              <input type="tel" id="phone" />
-            </div>
-            <div>
-              <label for="e_mail">E-mail </label>
-              <input type="email" id="e_mail" />
-            </div>
-            <div>
-              <label for="people">Persons </label>
-              <input type="number" id="people" size="4"/>
-            </div>
-            <div>
-              <label for="date">Date and time </label>
-              <input type="datetime-local" id="date"/>
-            </div>
-            <div>
-              <label for="info">Futher infomation </label>
-              <div>
-                <textarea id="info"></textarea>
-              </div>
-            </div>
-            <input type="button" id="submit" value="Send"/>
-          </fieldset>
-        </form>
-      </section>
+      </address>
+      <form action="process.php" method="POST">
+        <fieldset>
+          <legend>Contact form</legend>
+          <div>
+              <label for="txtFullName">Full name</label>
+              <input type="text" id="txtFullName" name="full_name" required pattern="([A-Za-z-]+ )+[A-Za-z-]+">
+          </div>
+          <div>
+              <label for="txtPhoneNo">Phone no.</label>
+              <input type="text" id="txtPhoneNo" name="phone_no" required pattern="[0-9]{8}">
+          </div>
+          <div>
+              <label for="txtEmail">E-mail</label>
+              <input type="email" id="txtEmail" name="email" required>
+          </div>                    
+          <div>
+              <label for="txtPersons">Persons</label>
+              <input type="number" id="txtPersons" name="persons" value="2" required min="1" max="20">
+          </div>                    
+          <div>
+              <label for="txtDateTime">Date and time</label>
+              <input type="datetime-local" id="txtDateTime" name="date_and_time" required>
+          </div>                                        
+          <div>
+              <label for="txtInformation">Further information</label><br>
+              <textarea id="txtInformation" name="further_information"></textarea>
+          </div>                                        
+          <input type="submit" value="Send">
+        </fieldset>
+      </form>
     </main>
     <footer>
       <p>&copy; 2024 KEA Web Development</p>
